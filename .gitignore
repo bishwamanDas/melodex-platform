@@ -1,0 +1,25 @@
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Build
+target/
+build/
+.next/
+node_modules/
+out/
+
+# Runtime
+data/
+
+# Env / Secrets
+.env
+.env.local
+.env.production.local
+
+# Misc
+*.log
+*.zip
+tools/
+setup.bat
