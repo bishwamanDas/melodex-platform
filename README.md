@@ -78,6 +78,19 @@ The backend utilizes the Gemini API to analyze the user's saved catalog.
 * Generates a personalized "Music Taste Profile".
 * **Mock Fallback:** If no API key is provided, a mock AI response is returned to ensure the feature remains testable for reviewers.
 
+## 5. 🧩 Entity Choice & Database Schema
+For the core domain model, **Albums** were chosen as the primary entity instead of individual tracks or artists. Albums provide richer, structured metadata (release year, genre, artist) which enables significantly better visual analytics and AI profiling.
+
+**Schema Definitions:**
+*   `users` table: `id` (UUID), `email` (String, Unique), `password` (String)
+*   `saved_albums` table: `id` (UUID), `user_id` (UUID, FK), `album_id` (String), `title` (String), `artist` (String), `cover_url` (String), `release_year` (Integer), `genre` (String), `saved_at` (Timestamp)
+
+## 6. ⚖️ Technical Trade-offs
+To ensure the project was delivered quickly while maintaining high quality, the following intentional trade-offs were made:
+*   **H2 Database over PostgreSQL:** Chosen to remove Docker/infrastructure friction for reviewers, ensuring the app runs instantly out-of-the-box.
+*   **Vanilla CSS over Tailwind:** Raw CSS modules were used to demonstrate a deep, fundamental understanding of CSS Grid, Flexbox, and modern UI without relying on utility frameworks.
+*   **JWT in LocalStorage over HttpOnly Cookies:** LocalStorage was used for speed of implementation and simplicity across the Next.js App Router, though HttpOnly cookies would be preferred for a strict production environment.
+
 ---
 
 # 📉 Features Implemented
