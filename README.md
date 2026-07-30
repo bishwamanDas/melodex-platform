@@ -65,6 +65,13 @@ The `/api/library/insights` endpoint collects the user's saved genres and artist
 
 If no API key is configured (`GEMINI_API_KEY` env var), the backend falls back to a mock response that still demonstrates the feature.
 
+## Live Demo
+
+| Service | URL |
+|---------|-----|
+| Frontend | https://melodex-platform.vercel.app |
+| Backend API | https://melodex-backend-6vur.onrender.com |
+
 ## Setup & Run
 
 ### Prerequisites
